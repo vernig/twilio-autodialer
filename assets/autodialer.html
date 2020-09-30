@@ -33,7 +33,7 @@
           type="text"
           class="form-control"
           id="number"
-          placeholder="+447342011497"
+          placeholder="+44XXXXXXXXXX"
         />
       </div>
 
@@ -97,7 +97,7 @@
           .then((resText) => {
             document.getElementById('log').innerHTML += `${Date()}: ${
               type.charAt(0).toUpperCase() + type.slice(1)
-            } dialer call to +447342011497 initiated: ${resText}<br/>`;
+            } dialer call to ${number} initiated: ${resText}<br/>`;
           });
       }
     </script>
