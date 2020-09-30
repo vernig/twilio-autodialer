@@ -1,0 +1,21 @@
+{
+  "name": "twilio-autodialer",
+  "version": "0.0.1",
+  "description": "Autodialer for Taskrouter",
+  "scripts": {
+    "start": "twilio-run",
+    "deploy": "twilio-run deploy"
+  },
+  "keywords": [
+    "twilio",
+    "taskrouter"
+  ],
+  "author": "gverni",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0"
+  },
+  "devDependencies": {
+    "twilio-run": "^2.6.0"
+  }
+}

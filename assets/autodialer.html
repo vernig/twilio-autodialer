@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twilio Autodialer</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="p-3">
+    <div class="jumbotron">
+      <h1 class="display-4">Twilio Autodialer</h1>
+      <hr class="my-4" />
+      <p>
+        <div class="form-group">
+
+        <label for="name">Name</label>
+        <input
+          type="name"
+          class="form-control"
+          id="name"
+          placeholder="Joe Doe"
+        />
+        </div>
+        <div class="form-group">
+
+        <label for="number">Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="number"
+          placeholder="+447342011497"
+        />
+      </div>
+
+        <div class="form-group">
+
+        <label for="reason">Reason for calling</label>
+        <input
+          type="text"
+          class="form-control"
+          id="reason"
+          placeholder="discuss about your quote"
+        />
+      </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="priority">
+          <label class="form-check-label" for="priority">High priority</label>
+        </div>
+        
+      </p>
+      <p class="lead">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="trigger('predictive')"
+        >
+          Create Predictive Dialer Task
+        </button>
+      </p>
+      <p class="lead">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="trigger('progressive')"
+        >
+          Create Progressive Dialer Task
+        </button>
+      </p>
+    </div>
+    <div id="log" class="p-3"></div>
+    <script>
+      function trigger(type) {
+        let name =
+          document.getElementById('name').value ||
+          document.getElementById('name').placeholder;
+        let number =
+          document.getElementById('number').value ||
+          document.getElementById('number').placeholder;
+        let reason =
+          document.getElementById('reason').value ||
+          document.getElementById('reason').placeholder;
+        let priority = document.getElementById('priority').checked * 1000 
+        fetch(
+          `/autodialer-create?autodialer=${type}&to=${encodeURIComponent(
+            number
+          )}&reason=${encodeURIComponent(reason)}&name=${encodeURIComponent(
+            name
+          )}&priority=${priority}`
+        )
+          .then((res) => res.text())
+          .then((resText) => {
+            document.getElementById('log').innerHTML += `${Date()}: ${
+              type.charAt(0).toUpperCase() + type.slice(1)
+            } dialer call to +447342011497 initiated: ${resText}<br/>`;
+          });
+      }
+    </script>
+  </body>
+</html>
