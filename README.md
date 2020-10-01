@@ -146,3 +146,10 @@ You need two browser windows for the demo:
 
 * Worker Interface: this is the `worker.html` address printed out by the deploy script, e.g `https://xxxx-xxxx-xxxxx-dev.twil.io/worker.html?workerSid=<worker_sid>`. `<worker_sid>` is the Worker SID created in step 5 
 * Autodialer interface: this is the `autodialer` address printed out by the deploy script, e.g. `https://xxxx-xxxx-xxxxx-dev.twil.io/autodialer.html`
+
+# Enhancement 
+
+Possible ehancements include: 
+
+* Add [Answering Machine Detection](https://www.twilio.com/docs/voice/answering-machine-detection) to the Predictive dialer / Studio Flow 
+* SMS callback: offer a callback IVR through SMS in case the customer rejects / doesn't answer
