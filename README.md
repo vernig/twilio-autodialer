@@ -12,6 +12,30 @@ Other products used in this repo are:
 * Twilio Programmable Messaging 
 * TaskrouterJS
 
+## Demo videos 
+
+### Predictive autodialer 
+
+The three windows in this demo are (starting from the left) Agent screen, Backend to generate call (e.g. CRM), customer phone. The flow is: 
+
+* Call is generated
+* When customer picks up, a customized message is played 
+* After the message is played a new task is generated for the agent
+* The agent accepts the task and it's connected with the customer
+
+[![image](https://user-images.githubusercontent.com/54728384/94798023-eb463c00-03d8-11eb-84eb-240279dfa56d.png)](https://youtu.be/E1NaUQRPk-Y)
+
+### Progressive autodialer 
+
+The three windows in this demo are (starting from the left) Agent screen, Backend to generate call (e.g. CRM), customer phone. The flow is: 
+
+* A new task is generated and assigned to an agent 
+* The agent accept the task 
+* The agent's UI shows contextual information and a click-to-call button
+* Once the agent click the button to call, and outbound call is initiated 
+
+[![Progressive Autodialer](https://user-images.githubusercontent.com/54728384/94797793-8ab6ff00-03d8-11eb-9abc-c3b2ef6d37df.png)](https://youtu.be/fr8N3FWjBuI)
+
 # Set-up 
 
 ## Step 1 - Create a Twilio account and purchase a number
